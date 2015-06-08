@@ -177,7 +177,11 @@ class ServiceProxy extends AbstractService
 		$token = new StdOAuth1Token();
 		$names = $this->service->getAccessTokenArgumentNames();
 
+<<<<<<< HEAD
         $token->setRequestToken($data[$names['oauth_token']]);
+=======
+		$token->setRequestToken($data[$names['oauth_token']]);
+>>>>>>> 304ffb2de8a7bea3b5061ce948a7b9a3fcd5495f
 		$token->setRequestTokenSecret($data[$names['oauth_token_secret']]);
 		$token->setAccessToken($data[$names['oauth_token']]);
 		$token->setAccessTokenSecret($data[$names['oauth_token_secret']]);

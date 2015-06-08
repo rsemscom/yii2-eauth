@@ -42,7 +42,11 @@ class LinkedinOAuth2Service extends Service
 	protected $type = 'OAuth2';
 	protected $jsArguments = array('popup' => array('width' => 900, 'height' => 550));
 
+<<<<<<< HEAD
 	protected $scopes = array(self::SCOPE_R_BASICPROFILE, self::SCOPE_R_EMAILADDRESS);
+=======
+	protected $scopes = array(self::SCOPE_R_BASICPROFILE);
+>>>>>>> 304ffb2de8a7bea3b5061ce948a7b9a3fcd5495f
 	protected $providerOptions = array(
 		'authorize' => 'https://www.linkedin.com/uas/oauth2/authorization',
 		'access_token' => 'https://www.linkedin.com/uas/oauth2/accessToken',
@@ -51,6 +55,7 @@ class LinkedinOAuth2Service extends Service
 
 	protected function fetchAttributes()
 	{
+<<<<<<< HEAD
 		$info = $this->makeSignedRequest('people/~:(id,first-name,last-name,public-profile-url,email-address)', array(
 			'query' => array(
 				'format' => 'json',
@@ -63,6 +68,18 @@ class LinkedinOAuth2Service extends Service
 		$this->attributes['url'] = $info['publicProfileUrl'];
         $this->attributes['emailAddress'] = $info['emailAddress'];
 
+=======
+		$info = $this->makeSignedRequest('people/~:(id,first-name,last-name,public-profile-url)', array(
+			'query' => array(
+				'format' => 'json',
+			),
+		));
+
+		$this->attributes['id'] = $info['id'];
+		$this->attributes['name'] = $info['firstName'] . ' ' . $info['lastName'];
+		$this->attributes['url'] = $info['publicProfileUrl'];
+		$this->attributes['email'] = $info['emailAddress'];
+>>>>>>> 304ffb2de8a7bea3b5061ce948a7b9a3fcd5495f
 		return true;
 	}
 
@@ -73,4 +90,8 @@ class LinkedinOAuth2Service extends Service
 	{
 		return ServiceInterface::AUTHORIZATION_METHOD_QUERY_STRING_V2;
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 304ffb2de8a7bea3b5061ce948a7b9a3fcd5495f

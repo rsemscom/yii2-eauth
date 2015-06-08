@@ -132,7 +132,11 @@ abstract class Service extends ServiceBase implements IAuthService
 			if (array_key_exists($key, $constants)) {
 				$resolvedScopes[] = $constants[$key];
 			} else {
+<<<<<<< HEAD
 				$resolvedScopes[] = $scopes;
+=======
+				$resolvedScopes[] = $scope;
+>>>>>>> 304ffb2de8a7bea3b5061ce948a7b9a3fcd5495f
 			}
 		}
 

@@ -181,7 +181,11 @@ abstract class ServiceBase extends \nodge\eauth\ServiceBase implements IAuthServ
 			}
 		}
 
+<<<<<<< HEAD
         $data = isset($options['data']) ? $options['data'] : array();
+=======
+		$data = isset($options['data']) ? $options['data'] : array();
+>>>>>>> 304ffb2de8a7bea3b5061ce948a7b9a3fcd5495f
 		$method = !empty($data) ? 'POST' : 'GET';
 		$headers = isset($options['headers']) ? $options['headers'] : array();
 
